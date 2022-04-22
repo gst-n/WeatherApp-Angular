@@ -1,0 +1,29 @@
+
+     <div class="border-blue-400 border-4 rounded-md p-10 shadow-md"> 
+         <p class="flex justify-between items-center text-xl"><img src="{{currentCity.currentConditions.iconURL}}" alt="">{{currentCity.currentConditions.comment}}</p>
+        <p class="block text-xl text-red-800 my-5">{{currentCity.region}}</p>
+        <p class="my-5">{{currentCity.currentConditions.temp.c}}° Celcius</p>
+
+        <button (click)="next_day()" class="block w-full border-blue-800 border-4 rounded-2xl my-5 hover:bg-blue-300 transition">Forecast for the next days</button>
+        <div *ngIf="next_days">
+            <p class="inline-flex justify-around items-center mx-5"> 
+                {{currentCity.next_days[0].day}}
+                {{currentCity.next_days[0].max_temp.c}}°C
+                <img class="mx-3" src="{{currentCity.next_days[0].iconURL}}" alt="">
+            </p>
+            <p class="inline-flex justify-around items-center mx-5">
+                {{currentCity.next_days[1].day}}
+                {{currentCity.next_days[1].max_temp.c}}°C
+                <img class="mx-3" src="{{currentCity.next_days[1].iconURL}}" alt="">
+            </p>
+
+            <p class="inline-flex justify-around items-center mx-5">
+                {{currentCity.next_days[2].day}} 
+                {{currentCity.next_days[2].max_temp.c}}°C
+                <img class="mx-3" src="{{currentCity.next_days[2].iconURL}}" alt="">
+            </p>
+            
+        </div>
+
+    </div>
+

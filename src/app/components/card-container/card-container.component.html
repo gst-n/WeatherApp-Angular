@@ -1,0 +1,11 @@
+<div class="border-blue-400 border-4 rounded-md p-10 my-5 shadow-md">
+    <form class="my-1 content-between">
+        <h4 class="capitalize text-center mt-1 text-4xl font-medium text-sky-600 flex items-center mx-3">weather forecast app <img class="" src="https://img.icons8.com/cute-clipart/64/000000/apple-weather.png"/> </h4>
+        <label for="city"></label>
+        <input class="block w-full my-5 h-10 border-slate-900 border-2 rounded-md" type="text" placeholder="City" autofocus #city>        
+        <button (click)="onSubmit(city)" class="block w-full border-blue-600 border-4 rounded-2xl hover:bg-blue-600 transition">Get weather!</button>
+    </form>
+</div>
+
+
+<app-current-weather-card  [currentCity]="currentCity" *ngIf="load"></app-current-weather-card>
